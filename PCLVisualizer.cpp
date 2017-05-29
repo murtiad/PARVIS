@@ -53,6 +53,7 @@ main ()
 	cout << "Enter full .pcd file path: (or you can also drag the file here)" << endl;
 	getline(cin, filePath);
 	std::cerr << "INFO : Loading " << filePath << std::endl;
+	cout << "Please wait...";
 
     pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZRGBA>);
     pcl::io::loadPCDFile (filePath, *cloud);
@@ -62,6 +63,7 @@ main ()
     //blocks until the cloud is actually rendered
     viewer.showCloud(cloud);
     
+	cout << endl;
 	cout << "Successfully loaded " << filePath << endl;
 
     //use the following functions to get access to the underlying more advanced/powerful
